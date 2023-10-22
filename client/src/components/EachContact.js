@@ -8,7 +8,7 @@ export default function EachContact({ contact }) {
 	const dispatch = useDispatch();
 	const { _id, name, phone, email } = contact ? contact : "";
 	return (
-		<tr >
+		<tr>
 			<th>
 				<div className="custom-control custom-checkbox">
 					<input type="checkbox" className="custom-control-input" />

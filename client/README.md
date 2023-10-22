@@ -1,9 +1,7 @@
 # react-redux-crud-using-hooks
 ## Client
 	- ReactJs & Redux
-
-	- Own README.md in /client directory
-
+	- Home: http://localhost:3000/contactApp
 
 
 

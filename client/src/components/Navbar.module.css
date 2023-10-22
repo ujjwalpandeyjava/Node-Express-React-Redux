@@ -1,0 +1,12 @@
+.navbar {
+	background-color: #e5f2ff70;
+}
+.buttons {
+	border: 1px solid blue;
+	padding: 2px 4px;
+	border-radius: 3px;
+}
+.buttons:hover {
+	background-color: blue;
+	color: wheat;
+}
