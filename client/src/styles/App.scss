@@ -1,0 +1,21 @@
+tbody td a {
+	color: #000000;
+	&:hover {
+		color: #0bbb05;
+	}
+	button {
+		background-color: #ffede6;
+		color: black;
+		text-decoration: none;
+		margin-inline: 3px;
+		border-radius: 5px;
+		box-shadow: 0px 3px 8px -4px gray;
+		&:active {
+			background-color: rgb(246, 246, 246);
+			box-shadow: none;
+		}
+		*{
+			text-decoration: none;
+		}
+	}
+}

@@ -1,14 +1,15 @@
 const express = require("express");
+var cors = require('cors')
 const router = express.Router();
 const mongoose = require('mongoose')
 const Contact = mongoose.model("Contacts")
 
 //  Fetch all data
 router.get("/", (req, res) => {
-    console.log("Fetch all: ", req.params);
+    console.log("Fetch all contact - params:", req.params);
     Contact.find()
         .then(data => {
-            res.json({ data })
+            res.json(data)
         })
         .catch(err => {
             console.log(err)
@@ -29,7 +30,7 @@ router.post('/', (req, res) => {
 
     newContact.save()
         .then(result => {
-            res.json({ Conatcts: result })
+            res.json({ newSavedContact: result })
         })
         .catch(err => {
             console.log(err)
@@ -41,7 +42,7 @@ router.delete('/:id', (req, res) => {
     Contact.findOne({ _id: req.params.id })
         .then(data => {
             data.remove()
-            res.json(data)
+            res.json({ "removedContact": data })
         })
         .catch(err => {
             console.log(err)
@@ -62,17 +63,16 @@ router.get('/:id', (req, res) => {
 
 //  Update Contact
 router.put('/:id', (req, res) => {
-
+    console.log("update: ", req.body);
     const { name, email, phone } = req.body
-    if (!name || !email || !phone) {
+    if (!name || !email || !phone)
         return res.status(422).send("please fill all the fields")
-    }
-
     const Id = req.params.id;
     Contact.findByIdAndUpdate({ _id: Id }, { $set: { name: req.body.name, email: req.body.email, phone: req.body.phone } }, { new: true })
         .then(data => {
             res.json(data)
-        }).catch(err => { console.log(err) })
+        })
+        .catch(err => { console.log(err) })
 
 })
 

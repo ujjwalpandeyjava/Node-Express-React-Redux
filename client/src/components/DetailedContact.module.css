@@ -1,0 +1,56 @@
+.fullContactContainer {
+	position: relative;
+	margin: 1em;
+	background: white;
+	padding: 1em;
+	border-radius: 1em;
+	box-shadow: 0 0 10px 0px gainsboro;
+	display: flex;
+}
+
+.editPencilIcon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	background: #eeeeee40;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.sections {
+	width: 100%;
+	padding: 0.5em;
+	font-size: 1.23rem;
+}
+
+.sectionGroup {
+	display: block;
+	margin-bottom: 0.6em;
+}
+.sectionGroup > label {
+	color: black;
+}
+.sectionGroup > .values {
+	color: rgb(70, 67, 67);
+	margin-left: 0.5em;
+	font-size: 0.85em;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgb(92, 96, 96);
+	width: 80%;
+	padding: 0 5px;
+	display: block;
+	background-color: rgba(241, 241, 241, 0.249);
+}
+.sectionGroup > input.values {
+	border-bottom-color: black;
+	color: #0d246a;
+	border-radius: 5px 5px 3px 3px;
+}
+
+.sectionGroup > input.values:read-only {
+	background-color: #dcdcdc;
+	color: gray;
+}
